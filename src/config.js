@@ -77,7 +77,8 @@ module.exports = {
             } : undefined,
             name: process.env.HOST || 'review.ninja',
             from: process.env.SMTP_FROM || 'ReviewNinja <noreply@review.ninja>',
-            ignoreTLS: process.env.SMTP_TLS === 'true'
+            ignoreTLS: process.env.SMTP_TLS === 'true',
+            debug: true
         },
 
         mongodb: (function() {
