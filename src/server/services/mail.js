@@ -7,6 +7,7 @@ module.exports = function() {
 
     function buildTransporter() {
         if(config.server.smtp.enabled) {
+            console.log(config.server.smtp);
             return nodemailer.createTransport(smtpTransport(config.server.smtp));
         }
         return nodemailer.createTransport(sendmailTransport());
@@ -18,6 +19,9 @@ module.exports = function() {
             var transporter = buildTransporter();
 
             transporter.sendMail(opts, function(err, res) {
+                
+                console.log(err, res);
+                
                 if(!err) {
                     transporter.close();
                 }
