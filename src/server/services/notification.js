@@ -144,6 +144,8 @@ module.exports = function() {
 
                     collaborators.forEach(function(collaborator){
                         getPrimaryEmail(collaborator.token, function(err, email) {
+                            
+                            console.log(collaborator, email);
 
                             if(err || !email) {
                                 return;
